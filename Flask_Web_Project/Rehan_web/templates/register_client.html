@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+{% block head %}
+<title> 
+Client Registration Page
+</title>
+<link rel="stylesheet" href="static/mystyle1.css">
+{% endblock %}
+{% block body %}
+<div class="container" id="LoginDiv">
+<h1 style="text-align:center;">E-commerce For Women</h1>
+<h2>Register Yourself</h2>
+<form class="row g-3" action="/registration" method="POST">
+<div class="col-md-6">
+    <label for="fname" class="form-label">First Name</label>
+    <input type="text" class="form-control" id="fname" name="fname" required>
+  </div>
+  <div class="col-md-6">
+    <label for="lname" class="form-label">Last Name</label>
+    <input type="text" class="form-control" id="lname" name="lname" required>
+  </div>
+  <div class="col-md-6">
+    <label for="mail" class="form-label">Email</label>
+    <input type="email" class="form-control" id="mail" name="mail" required>
+  </div>
+  <div class="col-md-6">
+    <label for="phone" class="form-label">Phone Number</label>
+    <input type="tel" class="form-control" id="phone" name="phone" required>
+  </div>
+<div class="col-md-6">
+    <label for="password" class="form-label">Password</label>
+    <input type="password" class="form-control" id="password" name="password" required>
+  </div>
+  <div class="col-md-6">
+    <label for="confirmPassword" class="form-label">Confirm Password</label>
+    <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
+  </div>
+
+
+
+<div class="col-md-6">
+    <label for="city" class="form-label">City</label>
+    <input type="text" class="form-control" id="city" name="city" required>
+  </div>
+  <div class="col-md-6">
+    <label for="state" class="form-label">Province</label>
+    <select id="state" class="form-select" name="state" required>
+      <option selected disabled>Select Province</option>
+      <option value="Punjab">Punjab</option>
+      <option value="KPK">KPK</option>
+      <option value="Sindh">Sindh</option>
+      <option value="Blochistan">Blochistan</option>
+    </select>
+  </div>
+
+<div class="col-12">
+    <label for="gender" class="form-label">Gender</label>
+<input type="radio" id="male" name="gender" value="male">
+  <label for="male">Male</label>
+  <input type="radio" id="female" name="gender" value="female">
+  <label for="female">Female</label>
+</div>
+
+
+{% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-danger" role="alert">
+        {{message}}
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary" id="client_account" style="margin:0px 16px">Register As Client </button>
+  </div>
+</form>
+<div class="CenterDiv">
+    <label for="Login" class="form-label">Already have an account?</label>
+    <a href="/" >Log in</a>
+  </div>
+
+</div>
+{% endblock %}

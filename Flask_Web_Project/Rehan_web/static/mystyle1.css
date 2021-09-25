@@ -1,0 +1,18 @@
+#LoginDiv{
+    margin: auto;
+    padding: 50px;
+    width: 50%;
+    margin-top: 10%;
+    backdrop-filter: initial;
+    background-color: rgb(218, 221, 227,0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+   
+
+}
+
+.CenterDiv{
+    margin: auto;
+    width: 50%;
+
+}

@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block head %}
+<title> 
+Register Page
+</title>
+<link rel="stylesheet" href="static/mystyle1.css">
+{% endblock %}
+{% block body %}
+<div class="container" id="LoginDiv">
+<h1 style="text-align:center;">E-commerce For Women</h1>
+<br>
+<h2>Register Yourself</h2>
+<h3 style="text-align:center">You can create account of any one user type</h3>
+<ul>
+<li style="align:center">
+<h4 >Register as Client</h4></li>
+<li style="align:center"><h4 >Register as Artist</h4></li>
+</ul>
+
+ <form action="/register_client" method="POST">
+ <button type="submit" class="btn btn-primary"  id="client_registration">Register As Client</button></form>
+ <hr>
+ <p>* For registering as artist you must have to show your work</p>
+  <form action="/register_artist" method="POST">
+  <button type="submit" class="btn btn-primary" id="artist_registration">Register As Artist</button>
+<br>
+<div class="CenterDiv">
+    <label for="create_account" class="form-label">Already have an account?</label>
+    <a href="/" >Login</a>
+  </div>
+</div>
+{% endblock %}

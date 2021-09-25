@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block head %}
+<title> 
+Login Page
+</title>
+<link rel="stylesheet" href="static/mystyle1.css">
+{% endblock %}
+{% block body %}
+<div class="container" id="LoginDiv">
+<h1 style="text-align:center;">E-commerce For Women</h1>
+<br>
+<h2>Login</h2>
+
+<form method="POST">
+  <div class="mb-3">
+    <label for="email" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Password</label>
+    <input type="password" class="form-control" id="password" name="password">
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+
+{% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-danger" role="alert">
+        {{message}}
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+  <button type="submit" class="btn btn-primary">Login</button>
+</form>      
+<div class="CenterDiv">
+    <label for="create_account" class="form-label">Don't have an account?</label>
+    <a href="/register" >Create Account</a>
+  </div>
+
+</div>
+{% endblock %}
